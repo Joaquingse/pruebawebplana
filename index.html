@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pitagoras</title>
+    <link rel="stylesheet" href="css/estilos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+
+
+    <style>
+        .cabecera {
+            background-image: url("img/Giza.webp");
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            
+        }
+
+        .sombra {
+            text-shadow: 3px 3px 5px black;
+            font-size: 5rem;
+        }
+
+        .sombra2{
+            text-shadow: 3px 3px 5px rgb(12, 1, 42);
+            font-size: 2rem;
+        }
+        li{
+            text-shadow: 3px 3px 5px black;
+            
+        }
+    </style>
+</head>
+
+<body class="gx-0">
+
+    <!-- CABECERA -->
+     
+    <header class="container-fluid cabecera d-flex align-items-center justify-content-center">
+        <h1 class="text-white sombra"><i class="bi bi-symmetry-vertical"></i>TEOREMA DE PITÁGORAS</h1>
+    </header>
+<!-- BARRA DE NAVEGACIÓN -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Inicio</a>
+
+
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#texto1">Tema I</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#texto2">Tema II</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#carrusel">Carrusel</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Menú
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#algebra">Algebra</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#geometria">Geometría</a></li>
+                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#calculo">Calculo</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+   
+
+  
+    <div id="liveAlertPlaceholder"></div>
+
+    <div class="container-fluid mt-3 mb-3">
+        <button type="button" class="btn btn-success" id="correcto">EJERCICIO</button>
+        <button type="button" class="btn btn-danger" id="incorrecto">SOLUCIÓN</button>
+    </div>
+
+    
+
+       
+    <div class="row row-cols-1  row-cols-md-2 row-cols-lg-4 gx-0">
+        <div class="col">
+            <div class="card h-100" >
+                <img src="img/introduccion.png" class="card-img-top">
+                <div class="card-body">
+                        <h1 class="card-title">Matemáticas</h1>
+                        <h5 class="card-text">Las matemáticas son un conjunto de lenguajes formales que pueden usarse como herramienta para plantear problemas en contextos específicos.</h5>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#matematicas">Más
+                            info</a>
+                </div>
+            </div>
+        </div>
+            
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/Algebra.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                        <h1 class="card-title">Álgebra</h1>
+                        <h5 class="card-text">El álgebra es una rama de las matemáticas que utiliza no solo números y signos, sino también letras para resolver operaciones. Visto de otro modo, el álgebra busca hallar el valor numérico de variables denominadas incógnitas. Estas se representan mediante letras del alfabeto como x o y.</h5>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#algebra">Más
+                            info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/calculo.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                        <h1 class="card-title">Cálculo</h1>
+                        <h5 class="card-text">El cálculo consiste en un procedimiento mecánico o algoritmo, mediante el cual podemos conocer las consecuencias que se derivan de las variables previamente conocidas debidamente formalizadas y simbolizadas.</h5>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#calculo">Más
+                            info</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <img src="img/geometria.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                        <h1 class="card-title">Geometría</h1>
+                        <h5 class="card-text">La geometría es una rama de las matemáticas que se ocupa del estudio de las propiedades de las figuras en el plano o el espacio, incluyendo: puntos, rectas, planos, politopos.</h5>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#geometria">Más
+                            info</a>
+                </div>
+            </div>
+        </div>
+        
+     <div id="texto1"></div>  
+        <br>
+    </div>
+    <div class="row mt-3 mb-3 gx-0" style="flex-wrap: wrap-reverse;">
+        
+        <div class="col-12 sticky-sm-top col-lg-8  fs-4" style="padding: 0px 2% 0px;  ">
+            El teorema de Pitágoras fue conocido por primera vez en la antigua Babilonia y Egipto (comienzos del 1900 A.C.). La relación fue demostrada en una tabla Babylonia de 4000 años, ahora conocida como Plimpton 322. Sin embargo, la relación no fue divulgada hasta que Pitágoras la enunció explicitamente.
+            El teorema de Pitágoras puede ser considerado como el teorema más importante de la geometría. Este teorema nos permite utilizar una ecuación algebraica para resolver problemas geométricos. De acuerdo con el teorema de Pitágoras, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los dos catetos. Recordemos que la hipotenusa es el lado opuesto al ángulo recto en un triángulo rectángulo y los catetos son los otros dos lados del triángulo.
+            
+    </div> 
+    <div class="col-12 col-lg-4 bg-image" >
+        <img src="img/pitagoras1.webp" class="img-fluid">   
+        </div>
+</div>
+<div id="texto2"></div>  
+    <br>
+</div>
+<div class="row mt-3 mb-3 gx-0" style="flex-wrap: wrap-reverse;">
+    
+    <div class="col-12 col-lg-8 fs-4" style="padding: 0px 2% 0px;  ">
+       
+        En matemáticas, el teorema de Pitágoras es una relación fundamental en geometría euclidiana entre los tres lados de un triángulo rectángulo. Afirma que el área del cuadrado cuyo lado es la hipotenusa (el lado opuesto al ángulo recto) es igual a la suma de las áreas de los cuadrados de los otros dos lados. Este teorema se puede escribir como una ecuación que relaciona las longitudes de los lados a, b y c, a menudo llamada ecuación pitagórica; Es la proposición más conocida entre las que tienen nombre propio en la matemática.1​
+
+        El teorema de Pitágoras establece que, en todo triángulo rectángulo, la longitud de la hipotenusa es igual a la raíz cuadrada de la suma del área de los cuadrados de las respectivas longitudes de los catetos.
+    </div>
+    <div class="col-12 col-lg-4 bg-image" >
+        <img src="img/pitagorasIII.webp" class="img-fluid ">   
+        </div>
+</div>
+
+     
+
+        <!--Matematicas-->
+    <div class="modal fade" id="matematicas" tabindex="-1" aria-labelledby="matematicasLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="matematicasLabel">MATEMÁTICAS</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="img/introduccion.png" alt="" class="card-img-top">
+                    <button type="button" class="btn btn-lg btn-danger mt-2 mb-2" data-bs-toggle="popover"
+                            data-bs-title="MATEMÁTICAS"
+                            data-bs-content="La matemática es un conjunto de lenguajes formales que pueden usarse como herramienta para plantear problemas en contextos específicos."
+                            data-bs-placement="bottom">Definición</button>
+                        <p>La enorme utilidad de la <a href="#" data-bs-toggle="tooltip" data-bs-title="La matemática es un conjunto de lenguajes formales que pueden usarse como herramienta para plantear problemas en contextos específicos." data-bs-placement="right">matemática</a> en las ciencias naturales es algo que roza lo misterioso, y no hay explicación para ello. No es en absoluto natural que existan <a href="#" data-bs-toggle="tooltip" data-bs-title="Ley de Newton, Principios de Termodinámica....." data-bs-placement="left">«leyes de la naturaleza»</a>, y mucho menos que el hombre sea capaz de descubrirlas. El milagro de lo apropiado que resulta el lenguaje de las matemáticas para la formulación de las leyes de la física es un regalo maravilloso que no comprendemos ni nos merecemos</p>
+                        <p>Hoy día, la matemática se usa en todo el mundo como una herramienta esencial en muchos campos, entre los que se encuentran las ciencias naturales, la ciencias aplicadas, las humanidades, la medicina y las ciencias sociales, e incluso disciplinas que, aparentemente, no están vinculadas con ella, como la música (por ejemplo, en cuestiones de resonancia armónica). Las matemáticas aplicadas, rama de la matemática destinada a la aplicación del conocimiento matemático a otros ámbitos, inspiran y hacen uso de los nuevos descubrimientos matemáticos y, en ocasiones, conducen al desarrollo de nuevas disciplinas. Los matemáticos también participan en la matemática pura, sin tener en cuenta la aplicación de esta ciencia, aunque las aplicaciones prácticas de la matemática pura suele ser descubiertas con el paso del tiempo.   
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+    <!--Algebra-->
+    <div class="modal fade" id="algebra" tabindex="-1" aria-labelledby="algebraLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                        <h5 class="modal-title" id="AlgebraLabel">ALGEBRA</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <img src="img/Algebra.png" alt="" class="card-img-top">
+                    <button type="button" class="btn btn-lg btn-danger mt-2 mb-2" data-bs-toggle="popover"
+                            data-bs-title="ALGEBRA"
+                            data-bs-content="El álgebra es una rama de las matemáticas que utiliza no solo números y signos, sino también letras para resolver operaciones. Visto de otro modo, el álgebra busca hallar el valor numérico de variables denominadas incógnitas. Estas se representan mediante letras del alfabeto como x o y."
+                            data-bs-placement="bottom">Definición</button>
+                        <p>La enorme utilidad de la <a href="#" data-bs-toggle="tooltip" data-bs-title="La matemática es un conjunto de lenguajes formales que pueden usarse como herramienta para plantear problemas en contextos específicos." data-bs-placement="right">matemática</a> en las ciencias naturales es algo que roza lo misterioso, y no hay explicación para ello. No es en absoluto natural que existan <a href="#" data-bs-toggle="tooltip" data-bs-title="Ley de Newton, Principios de Termodinámica....." data-bs-placement="left">«leyes de la naturaleza»</a>, y mucho menos que el hombre sea capaz de descubrirlas. El milagro de lo apropiado que resulta el lenguaje de las matemáticas para la formulación de las leyes de la física es un regalo maravilloso que no comprendemos ni nos merecemos</p>
+                        <p>Hoy día, la matemática se usa en todo el mundo como una herramienta esencial en muchos campos, entre los que se encuentran las ciencias naturales, la ciencias aplicadas, las humanidades, la medicina y las ciencias sociales, e incluso disciplinas que, aparentemente, no están vinculadas con ella, como la música (por ejemplo, en cuestiones de resonancia armónica). Las matemáticas aplicadas, rama de la matemática destinada a la aplicación del conocimiento matemático a otros ámbitos, inspiran y hacen uso de los nuevos descubrimientos matemáticos y, en ocasiones, conducen al desarrollo de nuevas disciplinas. Los matemáticos también participan en la matemática pura, sin tener en cuenta la aplicación de esta ciencia, aunque las aplicaciones prácticas de la matemática pura suele ser descubiertas con el paso del tiempo.   
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!--Calculo-->
+        <div class="modal fade" id="calculo" tabindex="-1" aria-labelledby="calculoLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title" id="calculoLabel">CÁLCULO</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+    
+                        <img src="img/calculo.png" alt="" class="card-img-top">
+                        <button type="button" class="btn btn-lg btn-danger mt-2 mb-2" data-bs-toggle="popover"
+                                data-bs-title="CÁLCULO"
+                                data-bs-content="El cálculo consiste en un procedimiento mecánico o algoritmo, mediante el cual podemos conocer las consecuencias que se derivan de las variables previamente conocidas debidamente formalizadas y simbolizadas."
+                                data-bs-placement="bottom">Definición</button>
+                            <p>La enorme utilidad de la <a href="#" data-bs-toggle="tooltip" data-bs-title="La matemática es un conjunto de lenguajes formales que pueden usarse como herramienta para plantear problemas en contextos específicos." data-bs-placement="right">matemática</a> en las ciencias naturales es algo que roza lo misterioso, y no hay explicación para ello. No es en absoluto natural que existan <a href="#" data-bs-toggle="tooltip" data-bs-title="Ley de Newton, Principios de Termodinámica....." data-bs-placement="left">«leyes de la naturaleza»</a>, y mucho menos que el hombre sea capaz de descubrirlas. El milagro de lo apropiado que resulta el lenguaje de las matemáticas para la formulación de las leyes de la física es un regalo maravilloso que no comprendemos ni nos merecemos</p>
+                            <p>Hoy día, la matemática se usa en todo el mundo como una herramienta esencial en muchos campos, entre los que se encuentran las ciencias naturales, la ciencias aplicadas, las humanidades, la medicina y las ciencias sociales, e incluso disciplinas que, aparentemente, no están vinculadas con ella, como la música (por ejemplo, en cuestiones de resonancia armónica). Las matemáticas aplicadas, rama de la matemática destinada a la aplicación del conocimiento matemático a otros ámbitos, inspiran y hacen uso de los nuevos descubrimientos matemáticos y, en ocasiones, conducen al desarrollo de nuevas disciplinas. Los matemáticos también participan en la matemática pura, sin tener en cuenta la aplicación de esta ciencia, aunque las aplicaciones prácticas de la matemática pura suele ser descubiertas con el paso del tiempo.   
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+         <!--Calculo-->
+         <div class="modal fade" id="geometria" tabindex="-1" aria-labelledby="geometriaLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                            <h5 class="modal-title" id="geometriaLabel">GEOMETRÍA</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+    
+                        <img src="img/geometria.png" alt="" class="card-img-top">
+                        <button type="button" class="btn btn-lg btn-danger mt-2 mb-2" data-bs-toggle="popover"
+                                data-bs-title="GEOMETRÍA"
+                                data-bs-content="La geometría es una rama de las matemáticas que se ocupa del estudio de las propiedades de las figuras en el plano o el espacio, incluyendo: puntos, rectas, planos, politopos."
+                                data-bs-placement="bottom">Definición</button>
+                            <p>La enorme utilidad de la <a href="#" data-bs-toggle="tooltip" data-bs-title="La matemática es un conjunto de lenguajes formales que pueden usarse como herramienta para plantear problemas en contextos específicos." data-bs-placement="right">matemática</a> en las ciencias naturales es algo que roza lo misterioso, y no hay explicación para ello. No es en absoluto natural que existan <a href="#" data-bs-toggle="tooltip" data-bs-title="Ley de Newton, Principios de Termodinámica....." data-bs-placement="left">«leyes de la naturaleza»</a>, y mucho menos que el hombre sea capaz de descubrirlas. El milagro de lo apropiado que resulta el lenguaje de las matemáticas para la formulación de las leyes de la física es un regalo maravilloso que no comprendemos ni nos merecemos</p>
+                            <p>Hoy día, la matemática se usa en todo el mundo como una herramienta esencial en muchos campos, entre los que se encuentran las ciencias naturales, la ciencias aplicadas, las humanidades, la medicina y las ciencias sociales, e incluso disciplinas que, aparentemente, no están vinculadas con ella, como la música (por ejemplo, en cuestiones de resonancia armónica). Las matemáticas aplicadas, rama de la matemática destinada a la aplicación del conocimiento matemático a otros ámbitos, inspiran y hacen uso de los nuevos descubrimientos matemáticos y, en ocasiones, conducen al desarrollo de nuevas disciplinas. Los matemáticos también participan en la matemática pura, sin tener en cuenta la aplicación de esta ciencia, aunque las aplicaciones prácticas de la matemática pura suele ser descubiertas con el paso del tiempo.   
+                            </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+        <div id="carrusel"></div>  
+        <br>
+    </div>
+    <div class="container-fluid" >
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
+            
+                    <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="img/pitagoras1.webp" class="d-block w-100" alt="...">
+                    
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white sombra">PRIMERA</h2>
+                    <h2 class="text-white sombra2">Texto que justifique la 1&ordf; diapositiva</h2>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/pitagorasII.webp" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white sombra">SEGUNDA</h2>
+                    <h2 class="text-white sombra2">Texto que justifique la 2&ordf; diapositiva</h2>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/pitagorasIII.webp" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white sombra">TERCERA</h2>
+                    <h2 class="text-white sombra2">Texto que justifique la 3&ordf; diapositiva</h2>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/pitagorasIV.webp" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white sombra">CUARTA</h2>
+                    <h2 class="text-white sombra2">Texto que justifique la 4&ordf; diapositiva</h2>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="5000">
+                <img src="img/pitagorasV.webp" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h2 class="text-white sombra">QUINTA</h2>
+                    <h2 class="text-white sombra2">Texto que justifique la 5&ordf; diapositiva</h2>
+                </div>
+              </div>
+            </div>
+            
+           
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+              <span><h1 class="text-white sombra"><i class="bi bi-skip-backward-fill"></i></H1></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" style="z-index: 10;">
+              <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+              <span><h1 class="text-white sombra"><i class="bi bi-skip-forward-fill"></i></h1></span>
+            </button>
+    
+          </div>
+        <footer class="container-fluid bg-dark text-light text-center p-4">
+            &#169; Constantino Lantigua 2022
+        </footer>
+    </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
+        <script>
+            //SCRIPT PARA ACTIVAR LOS POPOVER
+            const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+            const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
+            //SCRIPT PARA ACTIVAR LOS TOOLTIP
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+            //SCRIPT PARA ACTIVAR LOS ALERT
+            const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+            const alert = (message, type) => {
+                const wrapper = document.createElement('div')
+                wrapper.innerHTML = [
+                    `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                    `   <div>${message}</div>`,
+                    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    '</div>'
+                ].join('')
+
+                alertPlaceholder.append(wrapper)
+            }
+
+            const disparadorCorrecto = document.getElementById('correcto')
+            if (disparadorCorrecto) {
+                disparadorCorrecto.addEventListener('click', () => {
+                    alert('PLANTEAMIENTO: Un triángulo rectángulo........', 'success')
+                })
+            }
+
+            const disparadorIncorrecto = document.getElementById('incorrecto')
+            if (disparadorIncorrecto) {
+                disparadorIncorrecto.addEventListener('click', () => {
+                    alert('Solución del ejeccio propuest', 'danger')
+                })
+            }
+        </script>
+
+      
+
+</body>
+
+</html>
